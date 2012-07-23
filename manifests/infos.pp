@@ -56,11 +56,11 @@ class puppi::infos {
   }
 
   puppi::info::module { 'puppi':
-    configfile  => "${puppi::params::basedir}/puppi.conf",
-    configdir   => $puppi::params::basedir,
-    pidfile     => $puppi::params::pidfile,
-    datadir     => $puppi::params::archivedir,
-    logdir      => $puppi::params::logdir,
+    configfile  => ["${puppi::params::basedir}/puppi.conf"],
+    configdir   => [$puppi::params::basedir],
+    pidfile     => [$puppi::params::pidfile],
+    datadir     => [$puppi::params::archivedir],
+    logdir      => [$puppi::params::logdir],
     description => 'What Puppet knows about puppi' ,
     verbose     => 'yes',
 #   run         => "ls -lR ${puppi::params::logdir}/puppi-data/",
